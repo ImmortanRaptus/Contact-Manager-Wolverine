@@ -6,7 +6,7 @@
     $host = "localhost"; //where is the sql hosted prob local
     $user = "root"; //name we login for sql
     $password = ""; //password for sql
-    $databaseName = "ContactManager"; //name of db
+    $databaseName = "contact manager"; //name of db
 
     //establish connection with sql database
     $conn = mysqli_connect($host, $user, $password, $databaseName);
