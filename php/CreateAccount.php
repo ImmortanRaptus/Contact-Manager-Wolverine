@@ -1,16 +1,14 @@
 <?php
-
     //WORK IN PROGRESS
     //include config file but change to require
-    include "Config.php";
-
+    require "Config.php";
     $inData = getRequestInfo();
 
     $username=$_POST["username"];
     $password=$_POST["password"];
-
+    $email=$_POST["email"];
     //is the user name in the databse already
-    $sql = "SELECT * FROM 'user information' where 'Username' = ?";
+    $sql = "SELECT * FROM `User Information` where `Username` = ?";
     $usernameTaken = $conn->prepare($sql);
     $usernameTaken->bind_param("s", $username);
     $usernameTaken->execute();
@@ -21,15 +19,17 @@
     {
         //send error and maybe not close
         returnWithError();
-        $conn->close();
+        //$conn->close();
         return;
     }
 
+echo 0;
     //ok time to add the new user
-    $sql = "INSERT INTO 'user information' ('username', 'password') " . "VALUES (? , ?)";
+    $sql = "INSERT INTO `User Information` (`Username`, `Password`, `Email Address`) VALUES (? , ? , ?)";
     $addNewUser=$conn->prepare($sql);
-    $addNewUser->bind_param("ss", $username, $password);
-
+echo $username, $password, $email;
+    $addNewUser->bind_param("sss", $username, $password, $email);
+echo SADLKFAJSDA;SLFADSJK;
     $addNewUser->execute();
 
     /*maybe redirect to different page
@@ -38,7 +38,7 @@
 
     //maybe don't need to close, need to test
     $conn->close();
-
+	return;
 
 
 
