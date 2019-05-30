@@ -23,14 +23,13 @@
         return;
     }
 
-echo 0;
     //ok time to add the new user
     $sql = "INSERT INTO `User Information` (`Username`, `Password`, `Email Address`) VALUES (? , ? , ?)";
     $addNewUser=$conn->prepare($sql);
     $addNewUser->bind_param("sss", $username, $password, $email);
     $addNewUser->execute();
 
-    
+    //NEEDS TO UPDATE TO CONTACY PAGE
     header('Location: http://www.ProjectWolverine.net/');
     
 
