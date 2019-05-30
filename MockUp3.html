@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Account Creation</title>
+		<link rel="stylesheet" type="text/css" href="reset.css">
+		<link rel="stylesheet" type="text/css" href="style3.css">
+		<script type="text/javascript" src ="Mockup3.js"></script>
+</head>
+<body class="body">
+			<p class="registrationFont">Registration</p>
+	<div class="Box">
+		<form class = "inputForm" name="form">
+		  <div class="group">      
+		    <input type="text" required name = "User" onkeyup='userValKey();'>
+		    <span class="highlight"></span>
+		    <span class="bar"></span>
+		    <label>Username 				<span id='usernameMessage'></label>
+		  </div>
+
+		  <div class="group">      
+		    <input type="text" required name="Email" onkeyup='emailValKey();'>
+		    <span class="highlight"></span>
+		    <span class="bar"></span>
+		    <label>Email 				<span id='emailMessage'></span></label>
+		  </div>
+
+		  <div class="group">      
+		    <input type="Password" required name="Pass" onkeyup='passwordKey()'>
+		    <span class="highlight"></span>
+		    <span class="bar"></span>
+		    <label>Password 		    <span id='message'></span><span id='message2'></span><span id='message3'></span> </label>
+		  </div>
+
+		  <div class="group">      
+		    <input type="Password" required name="retypePass" onkeyup='retypePasswordKey()'>
+		    <span class="highlight"></span>
+		    <span class="bar"></span>
+		    <label>Re-type Password 		    <span id='retypeMessage'></label>
+
+		  </div>
+		  	<!-- Create Account Button -->
+<!-- 	<div class = "buttonPosition">
+					<button class = "button">SIGN UP</button>
+
+					<a href="" class = "accountLink"> Already have an account? </a>
+
+	</div>
+ -->
+		</form>
+
+		
+	</div>
+
+	<!-- Create Account Button -->
+	<div class = "buttonPosition">
+					<button class = "button" onclick="return checkValidation();" >SIGN UP</button>
+
+					<a href="" class = "accountLink"> Already have an account? </a>
+
+	</div>
+
+</body>
+</html>
