@@ -20,6 +20,10 @@ $address = $_POST['Address'];
 $CID = $_POST['Dunno'];
 $UID = $_SESSION['userid'];
 
+//get CID from the mysql server then return it to javascript
+$sql_query = SELECT LAST_INSERT_ID();
+$CID= $_P0ST[json_encode($sql_query)];
+
 
 //using cookie method
 //search for first and last name but we can do whatever
