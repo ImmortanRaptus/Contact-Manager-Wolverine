@@ -5,8 +5,8 @@
     //so I dont have to go into each and edit multiple times
     $host = "localhost"; //where is the sql hosted prob local
     $user = "root"; //name we login for sql
-    $password = "internecivusraptus"; //password for sql
-    $databaseName = "contact manager"; //name of db
+    $password = "internecivusRaptus"; //password for sql
+    $databaseName = "Contact Manager"; //name of db
 
     //establish connection with sql database
     $conn = mysqli_connect($host, $user, $password, $databaseName);
