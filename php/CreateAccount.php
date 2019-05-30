@@ -4,9 +4,9 @@
     require "Config.php";
     $inData = getRequestInfo();
 
-    $username=$_POST["username"];
-    $password=$_POST["password"];
-    $email=$_POST["email"];
+    $username=$_POST["User"];
+    $password=$_POST["Pass"];
+    $email=$_POST["Email"];
     //is the user name in the databse already
     $sql = "SELECT * FROM `User Information` where `Username` = ?";
     $usernameTaken = $conn->prepare($sql);
@@ -19,20 +19,20 @@
     {
         //send error and maybe not close
         returnWithError();
-        //$conn->close();
+        $conn->close();
         return;
     }
 
+echo 0;
     //ok time to add the new user
     $sql = "INSERT INTO `User Information` (`Username`, `Password`, `Email Address`) VALUES (? , ? , ?)";
     $addNewUser=$conn->prepare($sql);
     $addNewUser->bind_param("sss", $username, $password, $email);
     $addNewUser->execute();
 
-    //NEEDS TO BE UPDATED
-    /*maybe redirect to different page
-    header('Location: index.php');
-    */
+    
+    header('Location: http://www.ProjectWolverine.net/');
+    
 
     //maybe don't need to close, need to test
     $conn->close();
