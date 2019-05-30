@@ -7,26 +7,26 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- -----------------------------------------------------
 -- Schema Contact Manger
 -- -----------------------------------------------------
-DROP SCHEMA IF EXISTS `Contact Manger` ;
+DROP SCHEMA IF EXISTS `Contact Manager` ;
 
 -- -----------------------------------------------------
 -- Schema Contact Manger
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `Contact Manger` DEFAULT CHARACTER SET utf8 ;
-USE `Contact Manger` ;
+CREATE SCHEMA IF NOT EXISTS `Contact Manager` DEFAULT CHARACTER SET utf8 ;
+USE `Contact Manager` ;
 
 -- -----------------------------------------------------
 -- Table `Contact Manger`.`User Information`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `Contact Manger`.`User Information` (
-  `First Name` VARCHAR(45) NOT NULL,
-  `Last Name` VARCHAR(45) NOT NULL,
+CREATE TABLE IF NOT EXISTS `Contact Manager`.`User Information` (
+  `First Name` VARCHAR(45) NULL,
+  `Last Name` VARCHAR(45) NULL,
   `Username` VARCHAR(45) NOT NULL,
   `Password` VARCHAR(45) NOT NULL,
-  `Email Adress` VARCHAR(45) NOT NULL,
-  `user id` INT UNSIGNED NOT NULL,
+  `Email Address` VARCHAR(45) NOT NULL,
+  `user id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   UNIQUE INDEX `Username_UNIQUE` (`Username` ASC),
-  UNIQUE INDEX `Email Adress_UNIQUE` (`Email Adress` ASC),
+  UNIQUE INDEX `Email Adress_UNIQUE` (`Email Address` ASC),
   PRIMARY KEY (`user id`),
   UNIQUE INDEX `user id_UNIQUE` (`user id` ASC))
 ENGINE = InnoDB;
@@ -35,7 +35,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `Contact Manger`.`Contact Information`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `Contact Manger`.`Contact Information` (
+CREATE TABLE IF NOT EXISTS `Contact Manager`.`Contact Information` (
   `First Name` VARCHAR(45) NULL,
   `Last Name` VARCHAR(45) NULL,
   `Home Phone` VARCHAR(45) NULL,
