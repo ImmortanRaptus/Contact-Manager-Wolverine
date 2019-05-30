@@ -37,7 +37,7 @@ return true;
 function passwordVal(){
 
 	var flag1 = 0;
-	if ((form.Pass.value).length < 8 || (form.retypePass.value).length < 8) 
+	if ((form.Pass.value).length < 8) 
 	{
 		// document.getElementById('message').style.fontWeight = 'bold';
 		// document.getElementById('message').style.color = 'crimson';
