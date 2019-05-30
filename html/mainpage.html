@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" href="style.css">
+	<title> Contact Manager </title>
+</head>
+
+<body>
+
+	<div class="container">
+		<header id="main-header">
+				<h1> Contact Info</h1>
+		</header>
+		
+		<!-- Navbar at the top -->
+		<nav id="navBar">
+			<ul class="navOuter">
+				<div class="newOuter">
+					<li class="active">
+						<a href="#" id="button" class="button">new&nbsp;contact</a>
+					</li>
+				</div>
+				<div class="searchOuter">
+					<li><input type="text" placeholder="Search.." name="search">
+						<div class="iconOuter">
+							<button type="submit" class="searchBox"></button>
+						</div>		
+					</li>
+				</div>	
+				<div class="logOuter">
+					<li><a href="#" class="active">logout</a></li>
+				</div>
+			</ul>
+
+			<div class="clr"></div>	
+		</nav>
+		<div class="clr"></div>
+		
+		<div class="space"></div>
+		<!-- Table -->
+		<table class="tableBox" align="center">
+			<thead>
+				<tr>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Phone Number</th>
+					<th>Email</th>
+					<th>Edit</th>
+					<th>Delete</th>
+				</tr>
+			</thead>
+			
+			<tbody id="contact-list"></tbody>	
+		</table>
+
+		<!-- Modal Section -->
+		<div class="bg-modal">
+			<div class="modal-content">		
+				<div class="close">+</div>
+				<h1>
+					Create&nbsp;New&nbsp;Contact
+				</h1>	
+				<form id="contact-form">
+					<div class="form-group">
+						<label for"first">First Name *</label>
+						<input type="text" id="first" class="form-control" placeholder="First Name">
+					</div>
+					<div class="form-group">
+						<label for"last">Last Name *</label>
+						<input type="text" id="last" class="form-control" placeholder="Last Name">
+					</div>
+					<div class="form-group">
+						<label for"phone">Phone Number *</label>
+						<input type="tel" id="phone" class="form-control" placeholder="123-456-7890">
+					</div>
+					<div class="form-group">
+						<label for"work">Work Number</label>
+						<input type="tel" id="work" class="form-control" placeholder="123-456-7890">
+					</div>
+					<div class="form-group">
+						<label for"home">Home Number</label>
+						<input type="tel" id="home" class="form-control" placeholder="123-456-7890">
+					</div>
+					<div class="form-group">
+						<label for"email">Personal Email *</label>
+						<input type="text" id="email" class="form-control" placeholder="something@email.com">
+					</div>
+					<div class="form-group">
+						<label for"workmail">Work Email</label>
+						<input type="tel" id="workmail" class="form-control" placeholder="something@email.com">
+					</div>
+					<input type="submit"  value="Create">
+					<div class="msg"></div>
+				</form>	
+			</div>
+		</div>
+
+		<div class="green"></div>
+	</div>
+	<!--
+	<div style = "margin-top:500px"></div>
+	-->
+	<script src="main.js"></script>
+	
+</body>
+
+</html>
