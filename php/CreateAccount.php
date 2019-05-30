@@ -23,15 +23,13 @@
         return;
     }
 
-echo 0;
     //ok time to add the new user
     $sql = "INSERT INTO `User Information` (`Username`, `Password`, `Email Address`) VALUES (? , ? , ?)";
     $addNewUser=$conn->prepare($sql);
-echo $username, $password, $email;
     $addNewUser->bind_param("sss", $username, $password, $email);
-echo SADLKFAJSDA;SLFADSJK;
     $addNewUser->execute();
 
+    //NEEDS TO BE UPDATED
     /*maybe redirect to different page
     header('Location: index.php');
     */
