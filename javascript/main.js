@@ -23,6 +23,7 @@ class Contact{
         this.home = home;
         this.email = email;
         this.workmail = workmail;
+        CID = 0;
     }
 }
 
