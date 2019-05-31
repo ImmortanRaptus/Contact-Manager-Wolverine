@@ -42,3 +42,5 @@ $prepared->execute();
 //this should work
 $last_id = mysqli_insert_id($conn);
 $_POST['last id'] = $last_id;
+//to test later
+echo $last_id;
