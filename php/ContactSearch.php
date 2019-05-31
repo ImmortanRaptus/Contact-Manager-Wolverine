@@ -6,7 +6,8 @@ include "Config.php";
 
 //NEEDS MORE FIELDS, probably
 //GOTTA FILL OUT THE FIELDS
-$sql="SELECT * FROM 'contact information' WHERE 'UID' = ?" . "AND (('First Name' LIKE ?) OR ('Last Name' LIKE ?))";
+//check for backticks (`) and single quotes (')
+$sql="SELECT * FROM `contact information` WHERE `UID` = ?" . "AND ((`First Name` LIKE ?) OR (`Last Name` LIKE ?))";
 $userId = $_SESSION['userid'];
 $searchData = $_POST['Search'];
 
