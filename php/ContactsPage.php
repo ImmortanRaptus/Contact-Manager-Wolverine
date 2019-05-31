@@ -4,8 +4,9 @@
     //show all contacts
     include "Config.php";
     
-
-    $sql="SELECT * FROM 'contact information' WHERE 'UID' = ?";
+    //select all contects from DB that match UID
+    //backticks suck
+    $sql="SELECT * FROM `contact information` WHERE `UID` = ?";
     
     //using cookie method
     $prepared=$conn->prepare($sql);
@@ -15,6 +16,7 @@
     {
         $rows[] = $row;
     }
+    //or send via post, not sure
     echo json_encode($rows);
 
 
