@@ -23,7 +23,10 @@ function checkValidation(){
 	//	alert('You must submit a valid email address');
 	}
 
-	passwordVal();
+	if(passwordVal() == false)
+	{
+		flag++;
+	}
 
 	if (flag > 0)
 	{
