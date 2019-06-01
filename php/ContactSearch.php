@@ -2,7 +2,7 @@
 
 //WIP
 //show all contacts
-include "Config.php";
+require "Config.php";
 
 //NEEDS MORE FIELDS, probably
 //GOTTA FILL OUT THE FIELDS
