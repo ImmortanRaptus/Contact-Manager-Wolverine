@@ -55,38 +55,39 @@
     {
     	if ($username != "" && $password != "")
       {
+      	//CHECK THE NAME OF THE POST 
         $username = mysqli_real_escape_string($conn,$_POST['username']); //USER NAME
         $password = mysqli_real_escape_string($conn,$_POST['password']); //PASSWORD
 
-    		$sql_query = "SELECT * FROM `user information` WHERE `Username` = '$username'"; //prep SQL for USER and PASS
-    		$result = mysqli_query($conn, $sql_query); //check
+		  /*
+		   * what it was before
+		   * $sql_query = "SELECT * FROM `user information` WHERE `Username` = '$username'"; //prep SQL for USER and PASS
+		   */
 
-    		if (mysqli_num_rows($result) > 0)
-        {
-          $row = mysqli_fetch_array($result)
-
-          if (password_verify($password, $row[`password`]);
-          {
-            $userid = $result['user id'];
-
-      			if (isset($_POST['rememberme']))
-            {
-      				// Set cookie variables
-      				$days = 30;
-      				$value = encryptCookie($userid);
-      				setcookie ("rememberme",$value,time() + ($days * 86400 ));
-      			}
-
-      			$_SESSION['userid'] = $userid;
-      			header('Location: home.php');//where we goin after loggin in?
-      			exit;
-          }
+		  //this is prob where the issue was
+		  $sql_query = "SELECT * FROM `user information` WHERE `Username` = '".$username."'"; //prep SQL for USER and PASS
+		  $result = mysqli_query($conn, $sql_query); //check
+		  if (mysqli_num_rows($result) > 0)
+		  {
+		  	$row = mysqli_fetch_array($result)
+			  if (password_verify($password, $row[`password`]);
+			  {
+			  	$userid = $result['user id'];
+			  	if (isset($_POST['rememberme']))
+			  	{// Set cookie variables
+			  		$days = 30;
+			  		$value = encryptCookie($userid);
+			  		setcookie ("rememberme",$value,time() + ($days * 86400 ));}
+			  		$_SESSION['userid'] = $userid;
+			  		header('Location: home.php');//where we goin after loggin in?
+					exit;
+				}
     		}
     		else
-        {
+    			{
     			echo "Invalid username and password";
-    		}
-    	}
+    			}
+      }
     }
 
 
