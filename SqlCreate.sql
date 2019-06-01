@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS `Contact Manager`.`Contact Information` (
   INDEX `fk_Contact Information_User Information_idx` (`UID` ASC),
   CONSTRAINT `fk_Contact Information_User Information`
     FOREIGN KEY (`UID`)
-    REFERENCES `Contact Manger`.`User Information` (`user id`)
+    REFERENCES `Contact Manager`.`User Information` (`user id`)
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB;

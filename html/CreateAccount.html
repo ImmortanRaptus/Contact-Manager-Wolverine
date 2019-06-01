@@ -2,14 +2,14 @@
 <html>
 <head>
 	<title>Account Creation</title>
-		<link rel="stylesheet" type="text/css" href="reset.css">
-		<link rel="stylesheet" type="text/css" href="style3.css">
-		<script type="text/javascript" src ="Mockup3.js"></script>
+		<link rel="stylesheet" type="text/css" href="CSS/reset.css">
+		<link rel="stylesheet" type="text/css" href="CSS/style3.css">
+		<script type="text/javascript" src ="javascript/Mockup3.js"></script>
 </head>
 <body class="body">
-			<p class="registrationFont">Registration</p>
+		<p class="registrationFont">Registration</p>
 	<div class="Box">
-		<form class = "inputForm" name="form">
+		<form class = "inputForm" name="form" action="/API/CreateAccount.php" method="post">
 		  <div class="group">      
 		    <input type="text" required name = "User" onkeyup='userValKey();'>
 		    <span class="highlight"></span>
@@ -38,15 +38,7 @@
 		    <label>Re-type Password 		    <span id='retypeMessage'></label>
 
 		  </div>
-		  	<!-- Create Account Button -->
-<!-- 	<div class = "buttonPosition">
-					<button class = "button">SIGN UP</button>
-
-					<a href="" class = "accountLink"> Already have an account? </a>
-
-	</div>
- -->
-		</form>
+		  	<!-- Create Account Button -->		
 
 		
 	</div>
@@ -58,6 +50,6 @@
 					<a href="" class = "accountLink"> Already have an account? </a>
 
 	</div>
-
+		</form>
 </body>
 </html>
