@@ -2,11 +2,12 @@
 
 //WIP
 //show all contacts
-require "Config.php";
+include "Config.php";
 
 //NEEDS MORE FIELDS, probably
 //GOTTA FILL OUT THE FIELDS
-
+//user ID needs to be SESSION 
+//  $_SESSION['userid']
 $userid = mysqli_real_escape_string($conn,$_POST['userid']); //user ID
 $searchData = mysqli_real_escape_string($conn,$_POST['Search']); //Search form input
 //THIS IS WHERE WE WILL ADD MORE FIELDS AS NECESSARY
