@@ -1,0 +1,42 @@
+---------------------
+Login Page
+---------------------
+username = “username”
+password = “password’
+submit button = “signin_submit”
+---------------------
+Create Account
+---------------------
+username = “User”
+e-mail = “Email”
+password = “Pass”
+re-type = “retypePass”
+---------------------
+Contact Manager
+---------------------
+
+---------------------
+SQL SERVER
+
+`Contact Manger` `User Information`
+——————————————————————————
+`First Name`
+`Last Name`
+`Username`
+`Password`
+`Email Address`
+`user id`
+
+`Contact Manager`.`Contact Information`
+—————————————————————
+`First Name`
+`Last Name`
+`Home Phone`
+`Work Phone`
+`Cell Phone`
+`Personal Email`
+`Work Email`
+`Address`
+`CID`
+`UID`
+---------------------
