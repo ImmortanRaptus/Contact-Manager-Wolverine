@@ -1,36 +1,22 @@
 <?php
 
-//WIP
 //show all contacts
-include "Config.php";
+require "Config.php";
 
-//maybe needs more fields and what is CID?
-$sql="INSERT INTO 'contact information' ('First Name', 'Last Name', 'Home Phone', 
-'Work Phone', 'Cell Phone', 'Personal Email', 'Work Email', 'Address', 'CID', 'UID')".
-    "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
-$userId = $_SESSION['userid'];
+
+//inserts into DB based on these fields, allows NULL / empty
+$sql="INSERT INTO `Contact Information` (`First Name`, `Last Name`, `Home Phone`, 
+`Work Phone`, `Cell Phone`, `Personal Email`, `Work Email`, `Address`, `UID`)".
+    "VALUES (? , ?, ?, ?, ?, ?, ?, ?, ?)";
 $firstName = $_POST['First'];
 $lastName = $_POST['Last'];
-$homePhone = $_POST['Home Phone'];
-$workPhone = $_POST['Work Phone'];
-$cellPhone = $_POST['Cell Phone'];
-$homeEmail = $_POST['Home Email'];
-$workEmail = $_POST['Work Email'];
+$homePhone = $_POST['HomePhone'];
+$workPhone = $_POST['WorkPhone'];
+$cellPhone = $_POST['CellPhone'];
+$homeEmail = $_POST['HomeEmail'];
+$workEmail = $_POST['WorkEmail'];
 $address = $_POST['Address'];
-
-/*Not needed since SQL will auto create
-$CID = $_POST['Dunno'];
-*/
-
 $UID = $_SESSION['userid'];
-
-
-/* I dont think this will work - Phill
-
-//get CID from the mysql server then return it to javascript
-$sql_query = SELECT LAST_INSERT_ID();
-$CID = $_P0ST[json_encode($sql_query)];
-*/
 
 //using cookie method
 //search for first and last name but we can do whatever
@@ -39,8 +25,14 @@ $prepared->bind_param("sssssssss", $firstName, $lastName, $homePhone, $workPhone
     $homeEmail, $workEmail, $address, $UID);
 $prepared->execute();
 
-//this should work
-$last_id = mysqli_insert_id($conn);
-$_POST['last id'] = $last_id;
-//to test later
-echo $last_id;
+//sends what was recently inserted as a JSON
+$CID = $conn->insert_id;
+$sql="SELECT * FROM `Contact Information` WHERE `CID` = '" .$CID. "'";
+$result = mysqli_query($conn, $sql);
+while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
+{
+    $rows[] = $row;
+}
+echo json_encode($rows);
+
+?>
