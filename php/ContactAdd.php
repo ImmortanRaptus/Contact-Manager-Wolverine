@@ -1,6 +1,6 @@
 <?php
 
-//show all contacts
+//show all contacts and Add contact
 require "Config.php";
 
 
