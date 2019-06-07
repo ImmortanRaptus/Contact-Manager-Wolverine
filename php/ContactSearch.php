@@ -20,7 +20,6 @@ $searchData = mysqli_real_escape_string($conn,$_POST['Search']); //Search form i
 //THIS IS WHERE WE WILL ADD MORE FIELDS AS NECESSARY
 $sql="SELECT * FROM `Contact Information` WHERE `UID` = '" .$userid. "' AND ((`First Name` LIKE '" .$searchData. "') OR (`Last Name` LIKE '" .$searchData. "'))";
 
-//using cookie method
 //search for first and last name but we can do whatever
 $result = mysqli_query($conn, $sql);
 while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
