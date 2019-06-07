@@ -1,5 +1,6 @@
 <?php
-//PROPERLY UPDATE HEADERS
+
+//login check
 require "Config.php";
 
 //check if $_SESSION or $_COOKIE already set
@@ -88,26 +89,8 @@ if (isset($_POST['submit_button']))
 }
 //to allow any error messages
 //if there wasnt a refresh delay, it would immediate redirect before error can display
+//also allows redirection easily
 header("refresh: .1; url = https://www.projectwolverine.net/login.html");
 
-////helper funcitons
-//function getRequestInfo()
-//{
-//    return json_decode(file_get_contents('php://input'), true);
-//}
-//function sendResultInfoAsJson( $obj )
-//{
-//    header('Content-type: application/json');
-//    echo $obj;
-//}
-//function returnWithError( $err )
-//{
-//    $retValue = '{"id":0,"firstName":"","lastName":"","error":"' . $err . '"}';
-//    sendResultInfoAsJson( $retValue );
-//}
-//function returnWithInfo( $firstName, $lastName, $id )
-//{
-//    $retValue = '{"id":' . $id . ',"firstName":"' . $firstName . '","lastName":"' . $lastName . '","error":""}';
-//    sendResultInfoAsJson( $retValue );
-//}
+
 ?>
