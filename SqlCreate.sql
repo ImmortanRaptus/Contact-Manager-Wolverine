@@ -42,6 +42,7 @@ CREATE TABLE IF NOT EXISTS `Contact Manager`.`Contact Information` (
   `Cell Phone` VARCHAR(15) NULL,
   `Personal Email` VARCHAR(60) NULL,
   `Work Email` VARCHAR(60) NULL,
+  `address` VARCHAR(100) NULL,
   `CID` INT NOT NULL AUTO_INCREMENT,
   `UID` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`CID`),
