@@ -20,9 +20,9 @@ USE `Contact Manager` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Contact Manager`.`User Information` (
   `Username` VARCHAR(45) NOT NULL,
-  `Password` VARCHAR(45) NOT NULL,
-  `Email Address` VARCHAR(45) NOT NULL,
-  `Verified` TINYINT 0;
+  `Password` VARCHAR(60) NOT NULL,
+  `Email Address` VARCHAR(60) NOT NULL,
+  `Verified` TINYINT DEFAULT 0,
   `user id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   UNIQUE INDEX `Username_UNIQUE` (`Username` ASC),
   UNIQUE INDEX `Email Adress_UNIQUE` (`Email Address` ASC),
@@ -37,11 +37,11 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `Contact Manager`.`Contact Information` (
   `First Name` VARCHAR(45) NULL,
   `Last Name` VARCHAR(45) NULL,
-  `Home Phone` VARCHAR(45) NULL,
-  `Work Phone` VARCHAR(45) NULL,
-  `Cell Phone` VARCHAR(45) NULL,
-  `Personal Email` VARCHAR(45) NULL,
-  `Work Email` VARCHAR(45) NULL,
+  `Home Phone` VARCHAR(15) NULL,
+  `Work Phone` VARCHAR(15) NULL,
+  `Cell Phone` VARCHAR(15) NULL,
+  `Personal Email` VARCHAR(60) NULL,
+  `Work Email` VARCHAR(60) NULL,
   `CID` INT NOT NULL AUTO_INCREMENT,
   `UID` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`CID`),
