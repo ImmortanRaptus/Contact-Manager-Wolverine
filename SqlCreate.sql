@@ -19,11 +19,10 @@ USE `Contact Manager` ;
 -- Table `Contact Manger`.`User Information`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Contact Manager`.`User Information` (
-  `First Name` VARCHAR(45) NULL,
-  `Last Name` VARCHAR(45) NULL,
   `Username` VARCHAR(45) NOT NULL,
   `Password` VARCHAR(45) NOT NULL,
   `Email Address` VARCHAR(45) NOT NULL,
+  `Verified` TINYINT 0;
   `user id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   UNIQUE INDEX `Username_UNIQUE` (`Username` ASC),
   UNIQUE INDEX `Email Adress_UNIQUE` (`Email Address` ASC),
@@ -43,7 +42,6 @@ CREATE TABLE IF NOT EXISTS `Contact Manager`.`Contact Information` (
   `Cell Phone` VARCHAR(45) NULL,
   `Personal Email` VARCHAR(45) NULL,
   `Work Email` VARCHAR(45) NULL,
-  `Address` VARCHAR(100) NULL,
   `CID` INT NOT NULL AUTO_INCREMENT,
   `UID` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`CID`),
