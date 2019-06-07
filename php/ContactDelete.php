@@ -3,7 +3,7 @@
 //delete a contact from DB
 require "Config.php";
 
-//maybe needs more fields and what is CID?
+//delete using CID
 $sql="DELETE FROM `Contact Information` WHERE `CID` = ? ";
 $CID = $_POST['CID'];
 $prepared=$conn->prepare($sql);
