@@ -1,33 +1,42 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Project Wolverine</title>
-    <link rel = "stylesheet" type="text/css" href="LoginPage.css">
+    <title>Project : Wolverine</title>
+    <link rel = "stylesheet" type="text/css" href="CSS/LoginPage.css">
+    <script type="text/javascript">
+    window.location = "https://www.ProjectWolverine.net/API/Login.php"
+    </script>
+	<link rel="shortcut icon" href="favicon.png" />
   </head>
-  
-  <body class = "body">
-    <div class = "wrapper">
-      <h1 class = "registrationFont">PROJECT : WOLVERINE</h1>
-      <div class = "Box">
-        <form action = "Login.php" class = "inputForm" method = "post">
-          <div class = "group">      
-            <input type = "text" name = "username" required>
-            <span class = "highlight"></span>
-            <span class = "bar"></span>
-            <label>Username</label>
-          </div>
-          <div class = "group">      
-            <input type = "Password" required name = "password">
-            <span class = "highlight"></span>
-            <span class = "bar"></span>
-            <label>Password</label>
-            <div class = "buttonPosition">
-              <button type = "submit" name = "signin-submit" class = "button">SIGN IN</button>
-            </div>
-          </div>
-        </form>
-      </div>
-      <a href="url">Create New Account</a>
+  <body class="body" onload="check()">
+
+    <div class="Box">
+      <h1>PROJECT : WOLVERINE</h1>
+      <form action = "/API/Login.php" class = "inputForm" method="post">
+
+        <div class="group">
+          <input type="text" name = "username" required>
+          <span class="bar"></span>
+          <label>Username</label>
+        </div>
+
+        <div class="group">
+          <input type="Password" required name="password">
+          <span class="bar"></span>
+          <label>Password</label>
+        </div>
+
+        <p class = "error-text"><?php echo $errorMessage;?></p>
+
+        <div class = "buttonPosition">
+          <button type ="submit" class = "button" name = "submit_button">SIGN IN</button>
+        </div>
+
+      </form>
+
+    <a href = "Https://www.projectWolverine.net/CreateAccount.html">Create an Account</p>
+
     </div>
+
   </body>
 </html>
