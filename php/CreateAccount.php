@@ -40,14 +40,11 @@ $addNewUser->bind_param("sss", $username, $password, $email);
 $addNewUser->execute();
 
 //Send Verification Email
-$headers = array("From: Admin@ProjectWolverine.net",
-    "Reply-To: Admin@ProjectWolverine.net",
-    "X-Mailer: PHP/" . PHP_VERSION
-);
-$headers = implode("\r\n", $headers);
-mail($to, $subject, $message, $headers);
-$msg = "Please follow this link so that you can verify your email adderess on Project Wolverine: Https://www.ProjectWolverine.net/API/VerifyAccount.php?username=".$username;
+//Send Verification Email
+$msg = "Please follow this link so that you can verify your email adderess on Project Wolverine Portal: Https://www.ProjectWolverine.net/API/VerifyAccount.php?username=".$username;
 $msg = wordwrap($msg,70);
+mail($email, "Please Verify Your Account With Project Wolverine Portal", $msg);
+
 
 //code below is not used
 //$errorMessage = "Account Creation Successful! Close Box To Redirect To Login...";//ERROR MESSAGES
