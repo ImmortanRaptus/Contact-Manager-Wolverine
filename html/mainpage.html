@@ -1,16 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html style="background-color: #F3F3F3">
 
 <head>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" type="text/css" href="CSS/style.css">
+        <link rel="shortcut icon" href="favicon.png" />
+	<!-- <script type="text/javascript" src ="javascript/CreateAccount.js"></script> -->
 	<title> Contact Manager </title>
+
 </head>
 
 <body>
-
+    
+   <!--- <div var sessionValue = '<%=Session["usedData"]%>'></div> -->
 	<div class="container">
 		<header id="main-header">
-				<h1> Contact Info</h1>
+				<h1 data-text="Project Wolverine"><span>Project Wolverine</span></h1>
+				<div class="verticalLine"></div>
+				<div class= portalHeader>portal</div>
 		</header>
 		
 		<!-- Navbar at the top -->
@@ -21,87 +27,209 @@
 						<a href="#" id="button" class="button">new&nbsp;contact</a>
 					</li>
 				</div>
-				<div class="searchOuter">
-					<li><input type="text" placeholder="Search.." name="search">
-						<div class="iconOuter">
-							<button type="submit" class="searchBox"></button>
-						</div>		
+				<!-- <div class="searchOuter"> -->
+					<li	id="searchOuter">
+						<input id="searchInput" required onkeyup="search()" type="text" placeholder="Search.." name="search">
+						<!-- <div id="iconOuter"> -->
+							<a id="s-btn" href="#"></a>
+						<!-- </div> -->
 					</li>
-				</div>	
-				<div class="logOuter">
-					<li><a href="#" class="active">logout</a></li>
+				<!-- </div>	 -->
+				<div>
+					<form action="/API/Logout.php">
+						<li class="logOuter">
+							<!-- <a href="#" class="active">logout</a> -->
+							<input class="log" type="submit" value="LOGOUT">
+						</li>
+					</form>
 				</div>
 			</ul>
-
 			<div class="clr"></div>	
 		</nav>
-		<div class="clr"></div>
 		
-		<div class="space"></div>
+		
+		<!-- <div class="space"></div> -->
+		
 		<!-- Table -->
-		<table class="tableBox" align="center">
-			<thead>
-				<tr>
-					<th>First Name</th>
-					<th>Last Name</th>
-					<th>Phone Number</th>
-					<th>Email</th>
-					<th>Edit</th>
-					<th>Delete</th>
-				</tr>
-			</thead>
-			
-			<tbody id="contact-list"></tbody>	
-		</table>
-
-		<!-- Modal Section -->
+		<div class="table-bg">
+			<!-- <div class="clr"></div> -->
+			<!-- <div class="space"></div> -->
+			<table class="tableBox" align="center" >
+				<thead>
+					<tr class="thead">
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Phone Number</th>
+						<th>Email</th>
+						<th>View</th>
+						<th>Edit</th>
+						<th>Delete</th>
+					</tr>
+				</thead>
+				
+				<tbody id="contact-list"></tbody>	
+			</table>
+		
+		<!-- Modal Section for create new contact-->
 		<div class="bg-modal">
 			<div class="modal-content">		
 				<div class="close">+</div>
-				<h1>
-					Create&nbsp;New&nbsp;Contact
-				</h1>	
+				<h2>
+<!-- 					LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL
+	
+ -->			</h2>	
 				<form id="contact-form">
-					<div class="form-group">
-						<label for"first">First Name *</label>
-						<input type="text" id="first" class="form-control" placeholder="First Name">
+					<div class="form-group">				
+						<input type="text" required autocomplete="off" name='First Name' id="First Name" class="form-control">
+						<label for"first" class="labname">
+							<span class="content-name">First Name</span>
+						</label>
+					</div>
+					<div class="form-group">						
+						<input type="text" required autocomplete="off" name='Last Name' id="Last Name" class="form-control">
+						<label for"last" class="labname">
+							<span class="content-name">Last Name</span>
+						</label>
 					</div>
 					<div class="form-group">
-						<label for"last">Last Name *</label>
-						<input type="text" id="last" class="form-control" placeholder="Last Name">
+						<input type="text" required autocomplete="off" name='Cell Phone' id="Cell Phone" class="form-control">
+						<label for"phone" class="labname">
+							<span class="content-name">Personal Phone Number</span>
+						</label>
 					</div>
 					<div class="form-group">
-						<label for"phone">Phone Number *</label>
-						<input type="tel" id="phone" class="form-control" placeholder="123-456-7890">
+						<input type="tel" required autocomplete="off" name='Work Phone' id="Work Phone" class="form-control">
+						<label for"work" class="labname">
+							<span class="content-name">Work Number</span>
+						</label>
 					</div>
 					<div class="form-group">
-						<label for"work">Work Number</label>
-						<input type="tel" id="work" class="form-control" placeholder="123-456-7890">
+						<input type="tel" required autocomplete="off" name='Home Phone' id="Home Phone" class="form-control">
+						<label for"home" class="labname">
+							<span class="content-name">Home Number</span>
+						</label>
 					</div>
 					<div class="form-group">
-						<label for"home">Home Number</label>
-						<input type="tel" id="home" class="form-control" placeholder="123-456-7890">
+						<input type="text" required autocomplete="off" name='Personal Email' id="Personal Email" class="form-control">
+						<label for"email" class="labname">
+							<span class="content-name">Personal Email</span>
+						</label>
 					</div>
 					<div class="form-group">
-						<label for"email">Personal Email *</label>
-						<input type="text" id="email" class="form-control" placeholder="something@email.com">
+						<input type="text" required autocomplete="off" name='Work Email' id="Work Email" class="form-control">
+						<label for"Work Email" class="labname">
+							<span class="content-name">Work Email</span>
+						</label>
 					</div>
-					<div class="form-group">
-						<label for"workmail">Work Email</label>
-						<input type="tel" id="workmail" class="form-control" placeholder="something@email.com">
-					</div>
-					<input type="submit"  value="Create">
+					<input id="addForm" type="button"  value="Create">
 					<div class="msg"></div>
 				</form>	
 			</div>
 		</div>
 
 		<div class="green"></div>
+
+		<!--View popup-->
+		<div class="view-bg">
+			<div class="view-content">
+				<div class="view-close">+</div>
+				<!-- <div class="edit">Edit</div> -->
+				<h4 class="view-header">First Name</h4>
+				<p id="view-first">-</p>
+				<h4 class="view-header">Last Name</h4>
+				<p id="view-last">-</p>
+				<h4 class="view-header">Phone Number</h4>
+				<p id="view-phone">-</p>
+				<h4 class="view-header">Work Number</h4>
+				<p id="view-work">-</p>
+				<h4 class="view-header">Home Number</h4>
+				<p id="view-home">-</p>
+				<h4 class="view-header">Personal Email</h4>
+				<p id="view-email">-</p>
+				<h4 class="view-header">Work Email</h4>
+				<p id="view-workmail">-</p>
+
+				<div class="view-back">Back</div>
+			</div>
+			<div class="clr"></div>	
+		</div>
+
+		<!-- edit form-->
+		<div class="edit-bg">
+			<div class="edit-content">
+				<form id="edit-form">
+				<div class="form-group">
+					<input type="text" required name='edit-first' id="edit-first" class="form-control" >
+					<label for"edit-first" class="labname">
+						<span class="content-name">First Name</span>
+					</label>
+				</div>
+
+				<div class="form-group">
+					<input type="text" required name='edit-last' id="edit-last" class="form-control" >
+					<label for"edit-last" class="labname">
+						<span class="content-name">Last Name</span>
+					</label>
+				</div>
+				<div class="form-group">
+					<input type="text" required name='edit-phone' id="edit-phone" class="form-control" >
+					<label for"edit-phone" class="labname">
+						<span class="content-name">Phone Number</span>
+					</label>
+				</div>
+				<div class="form-group">
+					<input type="text" required name='edit-work' id="edit-work" class="form-control" >
+					<label for"edit-work" class="labname">
+						<span class="content-name">Work Number</span>
+					</label>
+				</div>
+				<div class="form-group">
+					<input type="text" required name='edit-home' id="edit-home" class="form-control" >
+					<label for"edit-work" class="labname">
+						<span class="content-name">Home Number</span>
+					</label>
+				</div>
+				<div class="form-group">
+					<input type="text" required name='edit-email' id="edit-email" class="form-control" >
+					<label for"edit-email" class="labname">
+						<span class="content-name">Personal Email</span>
+					</label>
+				</div>
+				<div class="form-group">
+					<input type="text" required name='edit-workmail' id="edit-workmail" class="form-control" >
+					<label for"edit-workmail" class="labname">
+						<span class="content-name">Work Email</span>
+					</label>
+				</div>
+				</form>
+				
+				<div class="edit-save">Save</div>
+				<div class="edit-cancel">Cancel</div>
+				<div class="clr"></div>
+			</div>
+		</div>
+				<input id="cur" type="text" hidden value="">
+
+		<div class="del-bg">
+			<div class="del-content">
+				<h3 class="del-msg">Deleting </h3>
+					<ul class="dul">
+						<li class="del-confirm">Confirm</li>
+						<li class="del-cancel">Cancel</li>
+					</ul>
+			</div>
+		</div>
+		
+		
+		<!-- table-bg end -->
+		</div>
+
+	<!-- container end -->
 	</div>
-	<!--
-	<div style = "margin-top:500px"></div>
-	-->
-	<script src="main.js"></script>
+
+
+    <script src="javascript/new.js">
+    </script>
 	
 </body>
 
