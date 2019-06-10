@@ -4,35 +4,37 @@
 	<title>Account Creation</title>
 		<link rel="stylesheet" type="text/css" href="CSS/reset.css">
 		<link rel="stylesheet" type="text/css" href="CSS/style3.css">
-		<script type="text/javascript" src ="javascript/Mockup3.js"></script>
+		<link rel="shortcut icon" href="favicon.png" />
 </head>
 <body class="body">
-		<p class="registrationFont">Registration</p>
+		<p id = "registrationFont" class="registrationFont">Registration</p>
+		<p class = "errorMessage" id = "errorMessage">  </p>
 	<div class="Box">
-		<form class = "inputForm" name="form" action="/API/CreateAccount.php" method="post">
+		<!-- action="/API/CreateAccount.php" method="post" -->
+		<form class = "inputForm" name="form">
 		  <div class="group">      
-		    <input type="text" required name = "User" onkeyup='userValKey();'>
+		    <input autocomplete="off" id='u' type="text" required name = "User" onkeyup='userValKey();'>
 		    <span class="highlight"></span>
 		    <span class="bar"></span>
 		    <label>Username 				<span id='usernameMessage'></label>
 		  </div>
 
 		  <div class="group">      
-		    <input type="text" required name="Email" onkeyup='emailValKey();'>
+		    <input autocomplete="off" id = 'e' type="text" required name="Email" onkeyup='emailValKey();'>
 		    <span class="highlight"></span>
 		    <span class="bar"></span>
 		    <label>Email 				<span id='emailMessage'></span></label>
 		  </div>
 
 		  <div class="group">      
-		    <input type="Password" required name="Pass" onkeyup='passwordKey()'>
+		    <input autocomplete="off" id = 'p' type="Password" required name="Pass" onkeyup='passwordKey()'>
 		    <span class="highlight"></span>
 		    <span class="bar"></span>
 		    <label>Password 		    <span id='message'></span><span id='message2'></span><span id='message3'></span> </label>
 		  </div>
 
 		  <div class="group">      
-		    <input type="Password" required name="retypePass" onkeyup='retypePasswordKey()'>
+		    <input autocomplete="off" type="Password" required name="retypePass" onkeyup='retypePasswordKey()'>
 		    <span class="highlight"></span>
 		    <span class="bar"></span>
 		    <label>Re-type Password 		    <span id='retypeMessage'></label>
@@ -45,11 +47,13 @@
 
 	<!-- Create Account Button -->
 	<div class = "buttonPosition">
-					<button class = "button" onclick="return checkValidation();" >SIGN UP</button>
-
-					<a href="" class = "accountLink"> Already have an account? </a>
+					<!-- onclick="return checkValidation();"-->
+					<button id = "eventButton" class = "button" >SIGN UP</button>
+	
+					<a href="Https://www.projectWolverine.net/" class = "accountLink"> Already have an account? </a>
 
 	</div>
 		</form>
-</body>
+
+		<script type="text/javascript" src ="javascript/CreateAccount.js"></script></body>
 </html>
