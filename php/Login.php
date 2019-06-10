@@ -63,6 +63,8 @@ if (isset($_POST['submit_button']))
             $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
             if (password_verify($password, $row ['Password']))//checks for password
             {
+              if ($row['Verified']==1)
+              {
                 $userid = $row['user id'];
                 if (isset($_POST['rememberme']))
                 {// Set cookie variables
@@ -73,6 +75,11 @@ if (isset($_POST['submit_button']))
                 $_SESSION['userid'] = $userid;
                 header('Location: ../mainpage.html');//where we goin after loggin in?
                 exit;
+              }  
+              else{
+                $errorMessage = "Not Verified! Email Verification Needed!";//ERROR MESSAGES
+                echo "<script type='text/javascript'>alert('$errorMessage');</script>";//popup displaying error
+              }
             }
             else//password is incorrect
             {
