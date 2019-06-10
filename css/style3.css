@@ -5,6 +5,12 @@
 	justify-content: center;
 }
 
+.errorMessage{
+	font-size: 20px;
+	color: red;
+	text-align: center;	
+}
+
 .registrationFont{
 	margin-top: 7.5%;
 	letter-spacing: 8px;
