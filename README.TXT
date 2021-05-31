@@ -8,4 +8,3 @@ Contacts can be editied, as well as deleted.
 Hosted on AWS EC2 Server using Apache Webserver and MySql.
 
 AWS operation and dns routing completed by Christopher Beirne. 
-http://www.ProjectWolverine.net
